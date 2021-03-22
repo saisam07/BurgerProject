@@ -1,0 +1,14 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<div class="container">
+	<img src= ${properties.fileReference} alt="Delicious Burger" width=100% height=${properties.height}>
+	<div class="bottom-right">
+	<h1><sly data-sly-resource="${'Title' @resourceType='burger/components/content/title'}"></h1>
+	</div>
+</div>
+</body>
+</html>

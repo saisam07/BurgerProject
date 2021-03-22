@@ -1,0 +1,34 @@
+<style>
+.container{
+position:relative; 
+text-align:center;
+}   
+
+.bottom-right{
+color:orange;        
+font-family:'Nunito';
+position: absolute;
+bottom: 8px;
+right: 32px;        
+} 
+.orange{
+     color:orange;
+}
+.blue{
+     color:blue;
+}
+.white{
+     color: white;
+}                        
+.small{
+    font-size:20px;
+    }
+.medium{
+    font-size:30px;
+}
+.large{
+    font-size:40px;        
+}
+
+
+</style>
