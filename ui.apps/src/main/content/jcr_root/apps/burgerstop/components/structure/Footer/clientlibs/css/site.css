@@ -1,0 +1,73 @@
+    .cmp_footer {
+      background: #2c292f;
+      color: white;
+    }
+
+    .cmp_footer_title .cmp_footer_logo {
+      float: left;
+      width: 35px;
+      height: 35px;
+
+    }
+
+   
+    .cmp_footer_title .head {
+      position: relative;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .cmp_footer_title:hover {
+      color: orange;
+    }
+
+    .cmp_footer .cmp_footer_links ul {
+      list-style-type: none;
+    }
+
+    .cmp_footer .cmp_footer_links li {
+      padding: 2px;
+    }
+
+    .cmp_footer .cmp_footer_links li a {
+      color: white;
+      transition: color 0.2s;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    .cmp_footer .cmp_footer_links li a:hover {
+      text-decoration: none;
+      color: orange;
+    }
+
+    .cmp_footer .cmp_footer_about_company i {
+      font-size: 25px;
+    }
+
+    .cmp_footer .cmp_footer_location i {
+      font-size: 25px;
+    }
+
+    .cmp_footer .cmp_footer_location a {
+      color: white;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+
+    .cmp_footer .cmp_footer_location a:hover {
+      color: orange;
+    }
+
+    .cmp_footer_socialmedia a {
+      font-size: 26px;
+      margin: 0 10px 0 0;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    .cmp_footer_socialmedia a:hover {
+      color: orange;
+    }
+
+    .cmp_footer_paragraph {
+      font-family: 'Raleway', sans-serif;
+    }
