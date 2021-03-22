@@ -1,0 +1,93 @@
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+</head>
+<body>
+	<button class="login-trigger" onclick="document.getElementById('id01').style.display='block'">Login/Register</button>	
+
+	<div id="id01" class="card">
+		<div class="login-box">
+			<span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+			<div class="login-snip">
+				
+				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
+					for="tab-1" class="tab">Login</label> <input id="tab-2"
+					type="radio" name="tab" class="sign-up"><label for="tab-2"
+					class="tab">Sign up</label>
+				<div class="login-space">
+					<div class="login">
+						<div class="group">
+							<label for="user" class="label"></label> <input id="user"
+								type="text" class="input" placeholder="Enter your username">
+						</div>
+						<div class="group">
+							<label for="pass" class="label"></label> <input id="pass"
+								type="password" class="input" data-type="password"
+								placeholder="Enter your password">
+						</div>
+						
+						<div class="group">
+							<input type="submit" class="button" value="Sign In">
+						</div>
+						<div class="hr"></div>
+						<div class="foot">
+							<a href="#">Forgot Password?</a>
+						</div>
+					</div>
+					<div class="sign-up-form">
+						<form action="RegisterServlet">
+                        <div class="group">
+							<label for="user" class="label"></label> <input id="user"
+								type="text" class="input" placeholder="Create your username">
+						</div>
+						<div class="group">
+							<label for="pass" class="label"></label> <input id="pass"
+								type="password" class="input" data-type="password"
+								placeholder="Create your password">
+						</div>
+						<div class="group">
+							<label for="pass" class="label"></label> <input
+								id="pass" type="password" class="input" data-type="password"
+								placeholder="Repeat your password">
+						</div>
+						<div class="group">
+							<label for="pass" class="label"></label> <input
+								id="pass" type="text" class="input"
+								placeholder="Enter your email address">
+						</div>
+						<div class="group">
+							<input type="submit" class="button" value="Sign Up">
+						</div>
+                        </form>
+						<div class="hr"></div>
+						<div class="foot">
+							<label for="tab-1">Already Member?</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+
+<script>
+$(".button").click(function(){
+console.log("Hello");
+var xmlhttp= new XMLHttpRequest();
+xmlhttp.onreadystatechange=function(){
+if(xmlhttp.readyState== XMLHttpRequest.DONE){
+console.log(xmlhttp.responseText);
+}
+}
+xmlhttp.open("POST", "/bin/burger/RegisterServlet", true);
+xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+xmlhttp.send("Hello");
+}
+);
+</script>
+</html>
+
