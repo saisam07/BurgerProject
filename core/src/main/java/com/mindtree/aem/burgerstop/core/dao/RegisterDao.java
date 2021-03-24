@@ -1,6 +1,6 @@
-package com.adobe.aem.guides.burger.core.dao;
+package com.mindtree.aem.burgerstop.core.dao;
 
-import com.adobe.aem.guides.burger.core.bean.Register;
+import com.mindtree.aem.burgerstop.core.bean.Register;
 
 public interface RegisterDao {
 	public String storeUserObjectIntoDatabase(Register register);

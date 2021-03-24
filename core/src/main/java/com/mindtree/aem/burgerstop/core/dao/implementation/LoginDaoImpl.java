@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.burger.core.dao.implementation;
+package com.mindtree.aem.burgerstop.core.dao.implementation;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.adobe.aem.guides.burger.core.dao.LoginDao;
+import com.mindtree.aem.burgerstop.core.dao.LoginDao;
+
 
 public class LoginDaoImpl implements LoginDao{
 	public String authenticateUser(String un , String pw) {

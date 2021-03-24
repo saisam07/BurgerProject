@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.burger.core.bean;
+package com.mindtree.aem.burgerstop.core.bean;
 
 public class Register {
 	String username;

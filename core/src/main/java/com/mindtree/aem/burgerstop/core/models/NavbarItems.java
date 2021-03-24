@@ -1,4 +1,4 @@
-package test.core.models;
+package com.mindtree.aem.burgerstop.core.models;
 
 import java.util.ArrayList;
 import java.util.Iterator;

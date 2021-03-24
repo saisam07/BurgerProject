@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.burger.core.dao.implementation;
+package com.mindtree.aem.burgerstop.core.dao.implementation;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,9 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.adobe.aem.guides.burger.core.bean.Register;
-import com.adobe.aem.guides.burger.core.dao.RegisterDao;
-import com.adobe.aem.guides.burger.core.utility.ConnectionEstablish;
+import com.mindtree.aem.burgerstop.core.bean.Register;
+import com.mindtree.aem.burgerstop.core.dao.RegisterDao;
+import com.mindtree.aem.burgerstop.core.utility.ConnectionEstablish;
+
+
 
 public class RegisterDaoImpl implements RegisterDao {
 	ConnectionEstablish ce = new ConnectionEstablish();

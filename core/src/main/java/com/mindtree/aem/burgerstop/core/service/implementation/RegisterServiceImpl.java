@@ -1,9 +1,9 @@
-package com.adobe.aem.guides.burger.core.service.implementation;
+package com.mindtree.aem.burgerstop.core.service.implementation;
 
-import com.adobe.aem.guides.burger.core.bean.Register;
-import com.adobe.aem.guides.burger.core.dao.RegisterDao;
-import com.adobe.aem.guides.burger.core.dao.implementation.RegisterDaoImpl;
-import com.adobe.aem.guides.burger.core.service.RegisterService;
+import com.mindtree.aem.burgerstop.core.bean.Register;
+import com.mindtree.aem.burgerstop.core.dao.RegisterDao;
+import com.mindtree.aem.burgerstop.core.dao.implementation.RegisterDaoImpl;
+import com.mindtree.aem.burgerstop.core.service.RegisterService;
 
 public class RegisterServiceImpl implements RegisterService{
 

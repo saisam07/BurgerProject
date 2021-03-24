@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.burger.core.servlets;
+package com.mindtree.aem.burgerstop.core.servlets;
 
 import java.io.IOException;
 
@@ -14,8 +14,9 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adobe.aem.guides.burger.core.dao.LoginDao;
-import com.adobe.aem.guides.burger.core.dao.implementation.LoginDaoImpl;
+import com.mindtree.aem.burgerstop.core.dao.LoginDao;
+import com.mindtree.aem.burgerstop.core.dao.implementation.LoginDaoImpl;
+
 
 
 

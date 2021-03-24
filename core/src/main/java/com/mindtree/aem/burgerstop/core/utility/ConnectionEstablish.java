@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.burger.core.utility;
+package com.mindtree.aem.burgerstop.core.utility;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

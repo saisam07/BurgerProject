@@ -1,4 +1,4 @@
-package com.adobe.aem.guides.burger.core.servlets;
+package com.mindtree.aem.burgerstop.core.servlets;
 
 import java.io.IOException;
 
@@ -15,8 +15,10 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adobe.aem.guides.burger.core.service.RegisterService;
-import com.adobe.aem.guides.burger.core.service.implementation.RegisterServiceImpl;
+import com.mindtree.aem.burgerstop.core.service.RegisterService;
+import com.mindtree.aem.burgerstop.core.service.implementation.RegisterServiceImpl;
+
+
 
 
 @Component(service=Servlet.class,
