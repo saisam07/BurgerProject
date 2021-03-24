@@ -2,15 +2,21 @@
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous">
+</script>
 </head>
 <body>
-	<button class="login-trigger" onclick="document.getElementById('id01').style.display='block'">Login/Register</button>	
+	<button class="login-trigger" onclick="document.getElementById('id01').style.display='block'; hittingAPI()" >Login/Register</button>	
 
 	<div id="id01" class="card">
 		<div class="login-box">
-			<span onclick="document.getElementById('id01').style.display='none'"
-class="close" title="Close Modal">&times;</span>
+
 			<div class="login-snip">
+            <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
 				
 				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
 					for="tab-1" class="tab">Login</label> <input id="tab-2"
@@ -19,17 +25,17 @@ class="close" title="Close Modal">&times;</span>
 				<div class="login-space">
 					<div class="login">
 						<div class="group">
-							<label for="user" class="label"></label> <input id="user"
+							<label for="user" class="label"></label> <input id="usernameLogin"
 								type="text" class="input" placeholder="Enter your username">
 						</div>
 						<div class="group">
-							<label for="pass" class="label"></label> <input id="pass"
+							<label for="pass" class="label"></label> <input id="passwordLogin"
 								type="password" class="input" data-type="password"
 								placeholder="Enter your password">
 						</div>
-						
+						<div id="add_to_me"></div>
 						<div class="group">
-							<input type="submit" class="button" value="Sign In">
+							<input type="submit" id="sbt" class="button" value="Sign In">
 						</div>
 						<div class="hr"></div>
 						<div class="foot">
@@ -37,57 +43,182 @@ class="close" title="Close Modal">&times;</span>
 						</div>
 					</div>
 					<div class="sign-up-form">
-						<form action="RegisterServlet">
                         <div class="group">
-							<label for="user" class="label"></label> <input id="user"
-								type="text" class="input" placeholder="Create your username">
+							<label for="username" class="label"></label> <input id="usernameRegister"
+								name="username" type="text" class="input" placeholder="Create your username">
 						</div>
-						<div class="group">
-							<label for="pass" class="label"></label> <input id="pass"
-								type="password" class="input" data-type="password"
-								placeholder="Create your password">
-						</div>
-						<div class="group">
-							<label for="pass" class="label"></label> <input
-								id="pass" type="password" class="input" data-type="password"
-								placeholder="Repeat your password">
-						</div>
-						<div class="group">
-							<label for="pass" class="label"></label> <input
-								id="pass" type="text" class="input"
+                        <div class="group">
+							<label for="email" class="label"></label> <input
+								id="email" name="email" type="text" class="input"
 								placeholder="Enter your email address">
 						</div>
 						<div class="group">
-							<input type="submit" class="button" value="Sign Up">
+							<label for="password" class="label"></label> <input id="passwordRegister"
+								name="password" type="password" class="input" data-type="password"
+								placeholder="Create your password">
 						</div>
-                        </form>
-						<div class="hr"></div>
-						<div class="foot">
-							<label for="tab-1">Already Member?</label>
+						<div class="group">
+							<label for="conpassword" class="label"></label> <input
+								id="conpassword" name="conpassword" type="password" class="input" data-type="password"
+								placeholder="Repeat your password">
 						</div>
+						<div class="group">
+							<label for="country" > </label>
+
+							<select name="country" style="right:-20px;" id="country">
+                        <option class="options" value="">Select country</option>
+							</select>
+						</div>
+						<div class="group">
+							<input type="submit"   onclick="hittingServlet()" class="button" value="Sign Up">
+							<h4 id="output"></h4>
+						</div>
+						<form>
+
+
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 </body>
 
 
-<script>
-$(".button").click(function(){
-console.log("Hello");
-var xmlhttp= new XMLHttpRequest();
-xmlhttp.onreadystatechange=function(){
-if(xmlhttp.readyState== XMLHttpRequest.DONE){
-console.log(xmlhttp.responseText);
+<script type="text/javascript">
+
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
+
+function hittingAPI(){
+    	var url="https://restcountries.eu/rest/v2/all";
+    	var xmlobj=new XMLHttpRequest();
+		var select="<option>--select country--</option>";
+    	xmlobj.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				var json=this.responseText;
+            	var parsedJson=JSON.parse(json);
+            	for(i=0; i<200; i++){
+					select += "<option>" +parsedJson[i].name +"</option>";
+            	}
+				document.getElementById("country").innerHTML= select;
+        	}
+    	};
+    	xmlobj.open("GET", url, true);
+    	xmlobj.send();
+
+	}
+
+
+function hittingServlet(){
+var username=$('#usernameRegister').val();
+var email=$('#email').val();
+var password=$('#passwordRegister').val();
+var conpassword=$('#conpassword').val();
+var country=$('#country').val();
+    if(username==null || username==""){
+		alert("Please enter your username");
+        return false;
+    }
+	else if(email==null || email==""){
+		alert("Please enter your email");
+        return false;
+    }
+	else if(password.length<6){
+		alert("Password must be atleast 6 characters long");
+        return false;
+    }
+    else if(password!=conpassword){
+		alert("Confirm Password should match with Password");
+        return false;
+    }
+    else if(country=="" || country==null || country=="--select country--"){
+		alert("Please select the country");
+        return false;
+    }
+$.ajax({
+			type:"GET",
+            url: "/bin/burger/RegisterServlet",
+			data:{
+				username: username,
+                email: email,
+                password: password,
+                conpassword: conpassword,
+                country: country,
+			},
+            success : function(data, textStatus, jqXHR) {
+                $('#output').text(data);
+
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown) {
+				$('#output').text(errorThrown);
+            }
+        });
 }
-xmlhttp.open("POST", "/bin/burger/RegisterServlet", true);
-xmlhttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-xmlhttp.send("Hello");
+
+
+$(document).ready(function(){
+$("#sbt").click(function(){
+
+
+var uname = $("#usernameLogin").val();
+
+var upass = $("#passwordLogin").val();
+
+
+var cookieValue = $("#usernameLogin").val();
+
+
+
+var now = new Date();
+now.setMonth(now.getMonth()+1);
+document.cookie = " name = " + cookieValue;
+document.cookie = " expires = " + now.toUTCString() + ";";
+var now = new Date();
+
+
+
+now.setMonth(now.getMonth() - 1);
+document.cookie = " name = " + cookieValue;
+document.cookie = " expires = " + now.toUTCString() + ";";
+
+
+
+if(uname!="" && upass!="")
+{
+
+$.ajax({
+type : "POST",
+url : '/bin/burger/LoginServlet',
+data : {
+"username": uname,
+"password": upass
+},
+success : function(data, textStatus, jqXHR) {
+alert("Success !!");
+alert(jqXHR.responseText);
+
+
+
+},
+error : function(XMLHttpRequest, textStatus, errorThrown) {
+alert("Error !!");
 }
-);
+});
+}
+else
+{
+$("#add_to_me").append("<p text-align='center'>Username or Password is Empty</p>");
+}
+});
+});
 </script>
+
+
 </html>
 
