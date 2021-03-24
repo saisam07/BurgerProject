@@ -2,19 +2,19 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:allowedTemplates="/conf/burgerstop/BurgerStop_Empty_Template/settings/wcm/templates/.*"
-        cq:deviceGroups="[/etc/mobile/groups/responsive]"
-        cq:lastModified="{Date}2021-03-25T01:18:17.300+05:30"
+        cq:lastModified="{Date}2021-03-25T01:20:11.752+05:30"
         cq:lastModifiedBy="admin"
+        cq:template="/conf/burgerstop/BurgerStop_Empty_Template/settings/wcm/templates/empty-page-template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="burgerstop"
-        sling:redirect="true"
-        sling:redirectStatus="{Long}302"
-        sling:resourceType="foundation/components/redirect"
-        redirectTarget="/content/burgerstop/en">
+        jcr:title="Home"
+        sling:resourceType="burgerstop/components/structure/page">
         <image jcr:primaryType="nt:unstructured">
             <file/>
         </image>
     </jcr:content>
-    <language-master/>
+    <careers/>
+    <privacy-policies/>
+    <terms-of-services/>
+    <contact-us/>
+    <faq/>
 </jcr:root>
