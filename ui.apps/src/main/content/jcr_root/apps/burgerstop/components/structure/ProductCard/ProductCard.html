@@ -1,0 +1,87 @@
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.css @ categories='productcard'}"/>
+	</sly>
+
+<script type=”text/javascript” src=”jQuery-min.js”></script>
+
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="http://static.sasongsmat.nu/fonts/vegetarian.css" />
+<script>
+	$(document).ready(function(){
+    $.ajax({     
+	type : "GET",     
+    	url : '/bin/aem-burgerstop/productCardServlet',     
+        /*data : {         
+        pass your request parameter here, currently we are not passing any data     
+        },*/     
+        success : function(data, textStatus, jqXHR) {   
+			 var data1=data;
+             var data2 = data1.split(";");
+			 var outone= data2["0"];
+             var outtwo= data2["1"];
+             var outthree= data2["2"];
+
+         $('#card-title').text(outone);
+         $('#card-text').text(outtwo);
+         $('#cmp_product_card_product_price').text(outthree);
+
+		 $('#cmp_product_card_product_name').text(outone);
+
+       },     
+        error : function(XMLHttpRequest, textStatus, errorThrown) {         
+        //write your logic that you need to perform on error     
+        } 
+        });
+		});
+
+</script>
+
+
+
+ <div class="cmp_product_card_anchor">
+    <a href="#" target="_blank">
+      <div class="card shadow">
+
+        <!-- 	Start product image & Information -->
+        <div class="cmp_product_card_flip_box">
+          <div class="cmp_product_card_flip_box_inner">
+            <div class="cmp_product_card_flip_box_front">
+              <img src="/content/dam/foodproject/Burger.jpg" class="card-img-top" alt="Burger">
+            </div>
+            <div class="cmp_product_card_flip_box_back">
+              <h3 class="cmp_product_card_product_name" id="cmp_product_card_product_name"></h3>
+              <p class="cmp_product_card_product_description">Lorem ipsum lorem jeansum. Lorem jeamsun denim lorem
+                jeansum.</p>
+            </div>
+          </div>
+        </div>
+        <!--  End product image  -->
+        <div class="cmp_product_card_product_details">
+          <h3 class="card-title" id="card-title"> <span class="veg-indian-vegetarian" ></span></h3>
+          <p class="card-text" id="card-text"></p>
+          <div class="cmp_product_card_price clearfix">
+
+            <span class="inline cmp_product_card_product_price" id="cmp_product_card_product_price"></span>
+
+            <div class="btn-group inline pull-right" data-toggle="buttons-checkbox"> 
+     <a href="#"
+                target="_blank"><button type="button" class="btn btn-warning pull-right">Add to cart</button></a>
+
+    		</div> 
+
+
+          </div>
+		</div>
+
+        </div>
+
+    </a>
+  </div>
