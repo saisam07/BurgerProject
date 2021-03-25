@@ -16,8 +16,10 @@ import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.mindtree.aem.burgerstop.core.dao.ProductCardDaoImpl;
-import com.mindtree.aem.burgerstop.core.entity.ProductCard;
+import com.mindtree.aem.burgerstop.core.bean.ProductCard;
+import com.mindtree.aem.burgerstop.core.dao.ProductCardDao;
+import com.mindtree.aem.burgerstop.core.dao.implementation.ProductCardDaoImpl;
+
 
 @Component(service = Servlet.class, property = { Constants.SERVICE_DESCRIPTION + "=Product card servlet",
 		"sling.servlet.methods=" + HttpConstants.METHOD_GET,
@@ -36,7 +38,7 @@ public class ProductCardServlet extends SlingSafeMethodsServlet {
 		response.setHeader("Content-Type", "text/html");
 
 		logger.info("start of servlet");
-		ProductCardDaoImpl dao = new ProductCardDaoImpl();
+		ProductCardDao dao = new ProductCardDaoImpl();
 
 		List<ProductCard> card = new ArrayList<ProductCard>();
 
