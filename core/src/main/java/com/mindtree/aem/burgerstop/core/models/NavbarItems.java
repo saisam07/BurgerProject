@@ -33,7 +33,7 @@ public class NavbarItems {
 		PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
 		Page currentPage = pageManager.getContainingPage(currentResource);
 
-		rootPage = currentPage.getAbsoluteParent(3);
+		rootPage = pageManager.getPage("/content/burgerstop/language-master/en");
 		Page morePage = pageManager.getPage("/content/burgerstop/language-master/en/home");
 
 		if (rootPage == null) {
