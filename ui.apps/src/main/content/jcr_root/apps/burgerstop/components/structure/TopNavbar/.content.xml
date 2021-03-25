@@ -3,4 +3,4 @@
     jcr:description="This is the navbar component of Ecommerce website."
     jcr:primaryType="cq:Component"
     jcr:title="Navbar Component"
-    componentGroup="testing"/>
+    componentGroup="burgerstop"/>
