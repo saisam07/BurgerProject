@@ -19,6 +19,7 @@
         }
     </style>
 </head>
+<body>
 <!--Navbar -->
 <sly data-sly-use.navitems="com.mindtree.aem.burgerstop.core.models.NavbarItems"></sly>
     <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-light nav-padding">
@@ -59,3 +60,75 @@
     </nav>
 <!--/.Navbar -->
 
+<div id="id01" class="card">
+		<div class="login-box">
+
+			<div class="login-snip">
+            <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+				
+				<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label
+					for="tab-1" class="tab">Login</label> <input id="tab-2"
+					type="radio" name="tab" class="sign-up"><label for="tab-2"
+					class="tab">Sign up</label>
+				<div class="login-space">
+					<div class="login">
+						<div class="group">
+							<label for="user" class="label"></label> <input id="usernameLogin"
+								type="text" class="input" placeholder="Enter your username">
+						</div>
+						<div class="group">
+							<label for="pass" class="label"></label> <input id="passwordLogin"
+								type="password" class="input" data-type="password"
+								placeholder="Enter your password">
+						</div>
+						<div id="add_to_me"></div>
+						<div class="group">
+							<input type="submit" id="sbt" class="button" value="Sign In">
+						</div>
+						<div class="hr"></div>
+						<div class="foot">
+							<a href="#">Forgot Password?</a>
+						</div>
+					</div>
+					<div class="sign-up-form">
+                        <div class="group">
+							<label for="username" class="label"></label> <input id="usernameRegister"
+								name="username" type="text" class="input" placeholder="Create your username">
+						</div>
+                        <div class="group">
+							<label for="email" class="label"></label> <input
+								id="email" name="email" type="text" class="input"
+								placeholder="Enter your email address">
+						</div>
+						<div class="group">
+							<label for="password" class="label"></label> <input id="passwordRegister"
+								name="password" type="password" class="input" data-type="password"
+								placeholder="Create your password">
+						</div>
+						<div class="group">
+							<label for="conpassword" class="label"></label> <input
+								id="conpassword" name="conpassword" type="password" class="input" data-type="password"
+								placeholder="Repeat your password">
+						</div>
+						<div class="group">
+							<label for="country" > </label>
+
+							<select name="country" style="right:-20px;" id="country">
+                        <option class="options" value="">Select country</option>
+							</select>
+						</div>
+						<div class="group">
+							<input type="submit"   onclick="hittingServlet()" class="button" value="Sign Up">
+							<h4 id="output"></h4>
+						</div>
+						<form>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
