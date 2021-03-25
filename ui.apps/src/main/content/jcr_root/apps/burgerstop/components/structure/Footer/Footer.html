@@ -1,21 +1,15 @@
 
   <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
-  <sly data-sly-call="${clientlib.css @ categories='footer'}"/>
+  <sly data-sly-call="${clientlib.css @ categories=['burgerstop.site','footer']}"/>
   </sly>
 
-  <sly data-sly-use.navitems="com.adobe.aem.guides.foodproject.core.models.FooterLinks"></sly>
 
 
-
+<head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
-
-
-
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-
-
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -23,14 +17,16 @@
   <!-- fontawesome-->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
 
-
+<!--/* footer start /*-->
+<sly data-sly-use.navitems="com.mindtree.aem.burgerstop.core.models.NavbarItems"></sly>
  <div class="mt-2 pt-5 pb-5 cmp_footer">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 col-xs-12 cmp_footer_about_company">
           <div class="cmp_footer_title">
-            <img src="/content/dam/foodproject/burger.png" class="cmp_footer_logo" alt="logo">
+            <img src="/content/dam/burgerstop/burger-stop-logo/burgerstop_footer_logo.png" class="cmp_footer_logo" alt="logo">
             <h2 class="cmp_footer_head">&nbsp;BURGER STOP</h2>
           </div>
           <br>
@@ -62,5 +58,5 @@
       </div>
     </div>
   </div>
-
+<!--/* footer start /*-->
 
