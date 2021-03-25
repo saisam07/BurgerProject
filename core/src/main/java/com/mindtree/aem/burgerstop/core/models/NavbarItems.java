@@ -34,7 +34,7 @@ public class NavbarItems {
 		Page currentPage = pageManager.getContainingPage(currentResource);
 
 		rootPage = currentPage.getAbsoluteParent(3);
-		Page morePage = pageManager.getPage("/content/testing/language-master/en/home");
+		Page morePage = pageManager.getPage("/content/burgerstop/language-master/en/home");
 
 		if (rootPage == null) {
 			rootPage = currentPage;
