@@ -1,4 +1,4 @@
-package com.mindtree.aem.burgerstop.core.entity;
+package com.mindtree.aem.burgerstop.core.bean;
 
 public class ProductCard {
 	String title;
