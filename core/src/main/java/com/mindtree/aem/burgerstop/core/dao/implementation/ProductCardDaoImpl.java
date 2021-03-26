@@ -1,9 +1,9 @@
 package com.mindtree.aem.burgerstop.core.dao.implementation;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,16 +11,15 @@ import com.mindtree.aem.burgerstop.core.bean.ProductCard;
 import com.mindtree.aem.burgerstop.core.dao.ProductCardDao;
 import com.mindtree.aem.burgerstop.core.utility.ConnectionEstablish;
 
-public class ProductCardDaoImpl implements ProductCardDao{
+public class ProductCardDaoImpl implements ProductCardDao {
 
 	public List<ProductCard> getData() {
 
 		Connection con = null;
-		Statement statement = null;
+		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 
 		ConnectionEstablish connection = new ConnectionEstablish();
-		
 
 		List<ProductCard> tile = new ArrayList<ProductCard>();
 		ProductCard tiles = new ProductCard();
@@ -32,8 +31,9 @@ public class ProductCardDaoImpl implements ProductCardDao{
 
 		try {
 			con = connection.databaseConnection();
-			statement = con.createStatement();
-			resultSet = statement.executeQuery("select * from product_tile_data");
+			String query = "select * from product_tile_data";
+			statement = con.prepareStatement(query);
+			resultSet = statement.executeQuery();
 
 			while (resultSet.next()) {
 
@@ -52,9 +52,7 @@ public class ProductCardDaoImpl implements ProductCardDao{
 		} catch (SQLException e) {
 
 			e.printStackTrace();
-		}
-		finally {
-			
+		} finally {
 			connection.closeConnection(statement, con);
 		}
 		return tile;
