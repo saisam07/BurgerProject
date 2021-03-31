@@ -1,3 +1,4 @@
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- JavaScript Bundle with Popper -->
@@ -6,7 +7,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <style>
-        body {
+        .navbar-body {
             font-family: 'Nunito', sans-serif;
         }
 		.navbar-nav .nav-item.active .nav-link,
@@ -17,9 +18,262 @@
             padding-right: 5%;
             padding-left: 5%;
         }
+
+.login-box {
+	width: 100%;
+	margin: auto;
+	max-width: 425px;
+	min-height: 530px;
+	position: relative;
+	background:
+		url()
+		no-repeat center;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.login-snip {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 50px 50px 30px 50px;
+	background: #333;
+
+}
+
+.login-snip .login, .login-snip .sign-up-form {
+	top: 20px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+	transition: all .4s linear
+}
+
+.login-snip .sign-in, .login-snip .sign-up, .login-space .group .check {
+	display: none
+}
+
+.login-snip .tab, .login-space .group .label, .login-space .group .button
+	{
+	text-transform: 
+}
+.login-space .group .button{
+	text-transform: uppercase
+}
+
+.login-snip .tab {
+	font-size: 20px;
+	font-family: 'Nunito',helvetica;
+	color: #b3b3b3;
+	margin-right: 15px;
+	padding-bottom: 5px;
+	margin: 0 15px 10px 0;
+	display: inline-block;
+	border-bottom: 1px solid transparent
+}
+
+.login-snip .sign-in:checked+.tab, .login-snip .sign-up:checked+.tab {
+	color: #FFA500;
+	border-color: #79C000FF;
+}
+
+.login-space {
+	min-height: 345px;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d
+}
+
+.login-space .group {
+	margin-bottom: 14px;
+}
+
+.login-space .group .label, .login-space .group .input, .login-space .group .button
+	{
+	width: 100%;
+	color: #fff;
+	display: block;
+}
+
+.login-space .group .input, .login-space .group .button {
+	border: none;
+	padding: 11px 20px;
+	border-radius: 25px;
+	background: rgba(255, 255, 255, .1);
+}
+
+.login-space .group input[data-type="password"] {
+	text-security: circle;
+	-webkit-text-security: circle
+}
+
+.login-space .group .button {
+	font-family:'Nunito',sans-serif;
+    background: orange;
+}
+
+.login-space .group label .icon {
+	width: 15px;
+	height: 15px;
+	border-radius: 2px;
+	position: relative;
+	display: inline-block;
+	background: white;
+}
+
+.login-space .group label .icon:before, .login-space .group label .icon:after
+	{
+	content: '';
+	width: 10px;
+	height: 2px;
+	background: black;
+	position: absolute;
+	transition: all .2s ease-in-out 0s
+}
+
+.login-space .group label .icon:before {
+	left: 3px;
+	width: 5px;
+	bottom: 6px;
+	transform: scale(0) rotate(0);
+}
+
+.login-space .group label .icon:after {
+	top: 6px;
+	right: 0;
+	transform: scale(0) rotate(0)
+}
+
+.login-space .group .check:checked+label {
+	color: #fff;
+}
+
+.login-space .group .check:checked+label .icon {
+	background: white;
+}
+
+.login-space .group .check:checked+label .icon:before {
+	transform: scale(1) rotate(45deg)
+}
+
+.login-space .group .check:checked+label .icon:after {
+	transform: scale(1) rotate(-45deg)
+}
+
+.login-snip .sign-in:checked+.tab+.sign-up+.tab+.login-space .login {
+	transform: rotate(0)
+}
+
+.login-snip .sign-up:checked+.tab+.login-space .sign-up-form {
+	transform: rotate(0)
+}
+
+*, :after, :before {
+	box-sizing: border-box
+}
+
+.clearfix:after, .clearfix:before {
+	content: '';
+	display: table
+}
+
+.clearfix:after {
+	clear: both;
+	display: block
+}
+
+.forgotlink {
+	color: white;
+	text-decoration: none
+}
+
+.hr {
+	height: 2px;
+	margin: 60px 0 10px 0;
+	background: rgba(255, 255, 255, .2);
+}
+
+.foot {
+	text-align: center;
+    color:white    
+}
+
+.cardmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-image: url("https://wallpaperaccess.com/full/1184222.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+::placeholder {
+    font-family:'Nunito',sans-serif;
+	color: black;
+    opacity: 1
+}
+.login-trigger {
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom right, #B05574, #F87E7B);
+  padding: 15px 30px;
+  border-radius: 30px;
+  position: relative; 
+  top: 50%;
+}
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: black;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+#country{
+    font-size:15px;
+    font-family:'Nunito', sans-serif;
+    width:100%;
+    height: 40px;
+	color:orange;
+    background : rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 25px;
+}
+#country::-ms-expand {
+     display: none;
+}
+#output-register{
+	text-align: center;
+    color: orange;
+    margin: 10px;
+
+}
+
+
     </style>
 </head>
-<body>
+<body class="navbar-body">
 <!--Navbar -->
 <sly data-sly-use.navitems="com.mindtree.aem.burgerstop.core.models.NavbarItems"></sly>
     <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-light nav-padding">
@@ -46,7 +300,7 @@
         </ul>
         <ul class="navbar-nav nav-flex-icons">
    		 <li class="nav-item">
-            <a class="nav-link">
+            <a class="nav-link" onclick="document.getElementById('id01').style.display='block'; hittingAPI()">
               <i class="fa fa-user" style="font-size:25px;"></i>
             </a>
           </li>
@@ -58,9 +312,10 @@
         </ul>
       </div>
     </nav>
+
 <!--/.Navbar -->
 
-<div id="id01" class="card">
+<div id="id01" class="cardmodal">
 		<div class="login-box">
 
 			<div class="login-snip">
@@ -88,41 +343,41 @@ class="close" title="Close Modal">&times;</span>
 						</div>
 						<div class="hr"></div>
 						<div class="foot">
-							<a href="#">Forgot Password?</a>
+							<a href="#" class="forgotlink">Forgot Password?</a>
 						</div>
 					</div>
 					<div class="sign-up-form">
                         <div class="group">
-							<label for="username" class="label"></label> <input id="usernameRegister"
+							 <input id="usernameRegister"
 								name="username" type="text" class="input" placeholder="Create your username">
 						</div>
                         <div class="group">
-							<label for="email" class="label"></label> <input
+							<input
 								id="email" name="email" type="text" class="input"
 								placeholder="Enter your email address">
 						</div>
 						<div class="group">
-							<label for="password" class="label"></label> <input id="passwordRegister"
+						     <input id="passwordRegister"
 								name="password" type="password" class="input" data-type="password"
 								placeholder="Create your password">
 						</div>
 						<div class="group">
-							<label for="conpassword" class="label"></label> <input
+							 <input
 								id="conpassword" name="conpassword" type="password" class="input" data-type="password"
 								placeholder="Repeat your password">
 						</div>
 						<div class="group">
-							<label for="country" > </label>
 
-							<select name="country" style="right:-20px;" id="country">
-                        <option class="options" value="">Select country</option>
+
+							<select name="country" id="country">
+                        	<option class="options" value="">Select country</option>
 							</select>
 						</div>
 						<div class="group">
 							<input type="submit"   onclick="hittingServlet()" class="button" value="Sign Up">
-							<h4 id="output"></h4>
+							<h5 id="output-register"></h5>
 						</div>
-						<form>
+
 
 
 
@@ -131,4 +386,147 @@ class="close" title="Close Modal">&times;</span>
 			</div>
 		</div>
 	</div>
+
+
 </body>
+
+<script type="text/javascript">
+
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function hittingAPI(){
+    	var url="https://restcountries.eu/rest/v2/all";
+    	var xmlobj=new XMLHttpRequest();
+		var select="<option>select country</option>";
+    	xmlobj.onreadystatechange=function(){
+			if(this.readyState==4 && this.status==200){
+				var json=this.responseText;
+            	var parsedJson=JSON.parse(json);
+            	for(i=0; i<200; i++){
+					select += "<option>" +parsedJson[i].name +"</option>";
+            	}
+				document.getElementById("country").innerHTML= select;
+        	}
+    	};
+    	xmlobj.open("GET", url, true);
+    	xmlobj.send();
+
+	}
+
+
+function hittingServlet(){
+var username=$('#usernameRegister').val();
+var email=$('#email').val(); 
+var password=$('#passwordRegister').val();
+var conpassword=$('#conpassword').val();
+var country=$('#country').val();
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(username==null || username==""){
+		alert("Please enter your username");
+        return false;
+    }
+	else if(email==null || email=="" ){
+		alert("Please enter your email");
+        return false;
+    } 
+    else if((!(email.match(validRegex)))){
+		alert("Please enter valid email address");
+        return false;
+    }
+	else if(password.length<6){
+		alert("Password must be atleast 6 characters long");
+        return false;
+    }
+    else if(password!=conpassword){
+		alert("Confirm Password should match with Password");
+        return false;
+    }
+    else if(country=="" || country==null || country=="select country"){
+		alert("Please select the country");
+        return false;
+    }
+$.ajax({
+			type:"GET",
+            url: "/bin/burger/RegisterServlet",
+			data:{
+				username: username,
+                email: email,
+                password: password,
+                conpassword: conpassword,
+                country: country,
+			},
+            success : function(data, textStatus, jqXHR) {
+                $('#output-register').text(data);
+
+            },
+            error : function(XMLHttpRequest, textStatus, errorThrown) {
+				$('#output-register').text(errorThrown);
+            }
+        });
+
+}
+
+
+$(document).ready(function(){
+$("#sbt").click(function(){
+
+
+var uname = $("#usernameLogin").val();
+
+var upass = $("#passwordLogin").val();
+
+
+var cookieValue = $("#usernameLogin").val();
+
+
+
+var now = new Date();
+now.setMonth(now.getMonth()+1);
+document.cookie = " name = " + cookieValue;
+document.cookie = " expires = " + now.toUTCString() + ";";
+var now = new Date();
+
+
+
+now.setMonth(now.getMonth() - 1);
+document.cookie = " name = " + cookieValue;
+document.cookie = " expires = " + now.toUTCString() + ";";
+
+
+
+if(uname!="" && upass!="")
+{
+
+$.ajax({
+type : "POST",
+url : '/bin/burger/LoginServlet',
+data : {
+"username": uname,
+"password": upass
+},
+success : function(data, textStatus, jqXHR) {
+alert("Success !!");
+alert(jqXHR.responseText);
+
+
+
+},
+error : function(XMLHttpRequest, textStatus, errorThrown) {
+alert("Error !!");
+}
+});
+}
+else
+{
+$("#add_to_me").append("<p text-align='center'>Username or Password is Empty</p>");
+}
+});
+});
+</script>
+
