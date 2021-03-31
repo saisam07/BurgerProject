@@ -1,0 +1,59 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+data-sly-call="${clientLib.all @ categories='productcardtwo'}"/>
+
+<sly data-sly-use.obj="com.mindtree.aem.burgerstop.core.models.ProductCardModel"></sly>
+
+
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Raleway:wght@300&display=swap" rel="stylesheet">
+<style>
+
+.wrapper .container .top .product_image{
+  height: 100%;
+  width: 100%;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+}
+</style>
+</head>
+
+<div class="container">
+	<div class="row">
+
+    <div class="col-xs-6 col-sm-4 " data-sly-repeat="${obj.getDetails}" >
+
+
+<div class="wrapper">
+  <div class="container">
+    <div class="top" ><img src="/content/dam/burgerstop/burger-stop-images/${item.getCategory}/${item.getImgDetails}.jpg" class="product_image" alt="${item.getTitle}"></div>
+    <div class="bottom">
+      <div class="left" style=" right: -20px">
+        <div class="details">
+          <h5><strong>${item.getTitle}</strong></h5>
+          <p>${item.getPrice}</p>
+        </div>
+        <div class="buy" style="background-color:#f48b29;"><a href="${item.getCartPath}"><i class="fa fa-cart-plus" style="font-size:25px;color:white;"></i></a></div>
+      </div>
+
+    </div>
+  </div>
+  <div class="inside">
+    <div class="icon"><span><strong>info</strong></span></div>
+    <div class="contents">
+      <div class="description">
+   		<h3>${item.getTitle}</h3>
+		<p>${item.getDescription}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
